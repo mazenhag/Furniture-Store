@@ -1,0 +1,786 @@
+/* =========================
+   Home Page
+========================= */
+
+.home-page {
+  width: 100%;
+
+  padding: 28px 20px 60px;
+
+  background-color: var(--color-background);
+}
+
+
+.home-page > * {
+  width: 100%;
+  max-width: var(--container-width);
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================
+   Hero
+========================= */
+
+.home-hero {
+  height: 470px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-md);
+
+  background-image:
+    url("https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1600&q=85");
+
+  background-size: cover;
+  background-position: center;
+}
+
+
+.hero-overlay {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 50px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(20, 25, 23, 0.68) 0%,
+      rgba(20, 25, 23, 0.35) 45%,
+      rgba(20, 25, 23, 0.05) 75%
+    );
+}
+
+
+.hero-content {
+  color: #ffffff;
+}
+
+
+.hero-content h1 {
+  margin-bottom: 15px;
+
+  font-family: Georgia, serif;
+
+  font-size: 48px;
+  font-weight: 600;
+
+  line-height: 1.08;
+}
+
+
+.hero-content p {
+  margin-bottom: 25px;
+
+  color: rgba(255, 255, 255, 0.88);
+
+  font-size: 15px;
+
+  line-height: 1.5;
+}
+
+
+.hero-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  min-width: 115px;
+  height: 40px;
+
+  padding: 0 18px;
+
+  border-radius: var(--radius-sm);
+
+  background-color: #171717;
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.hero-button:hover {
+  background-color: var(--color-secondary);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   Benefits
+========================= */
+
+.home-benefits {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+
+  padding: 22px 5px 8px;
+}
+
+
+.benefit-item {
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 8px;
+
+  text-align: center;
+}
+
+
+.benefit-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 50%;
+
+  background-color: var(--color-surface);
+
+  color: var(--color-primary);
+}
+
+
+.benefit-item h3 {
+  color: var(--color-text);
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   Sections
+========================= */
+
+.home-section {
+  margin-top: 35px;
+}
+
+
+.section-heading {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+}
+
+
+.section-heading h2 {
+  color: var(--color-text);
+
+  font-size: 19px;
+  font-weight: 700;
+}
+
+
+.section-title-link {
+  color: inherit;
+
+  text-decoration: none;
+}
+
+
+.section-title-link:hover h2 {
+  color: var(--color-primary-light);
+}
+
+
+/* =========================
+   Categories
+========================= */
+
+.category-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(5, 1fr);
+
+  gap: 14px;
+}
+
+
+.category-card {
+  min-width: 0;
+
+  color: inherit;
+
+  text-decoration: none;
+}
+
+
+.category-image {
+  width: 100%;
+
+  aspect-ratio: 1 / 0.82;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-sm);
+
+  background-color: #e8e5de;
+}
+
+
+.category-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+
+.category-card:hover .category-image img {
+  transform: scale(1.04);
+}
+
+
+.category-card h3 {
+  margin-top: 7px;
+
+  color: var(--color-text);
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   Featured Products
+========================= */
+
+.featured-heading {
+  margin-bottom: 15px;
+}
+
+
+.product-arrows {
+  display: flex;
+
+  gap: 7px;
+}
+
+
+.product-arrows button {
+  width: 32px;
+  height: 32px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid var(--color-border);
+
+  border-radius: 50%;
+
+  background-color: var(--color-surface);
+
+  color: var(--color-text);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease;
+}
+
+
+.product-arrows button:hover:not(:disabled) {
+  background-color: var(--color-primary);
+
+  border-color: var(--color-primary);
+
+  color: #ffffff;
+}
+
+
+.product-arrows button:disabled {
+  opacity: 0.35;
+
+  cursor: not-allowed;
+}
+
+
+.featured-products {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 22px;
+}
+
+
+.featured-product-card {
+  min-width: 0;
+}
+
+
+.featured-image {
+  position: relative;
+
+  width: 100%;
+
+  aspect-ratio: 1 / 1;
+
+  overflow: hidden;
+
+  border-radius: var(--radius-sm);
+
+  background-color: #e8e5de;
+}
+
+
+.product-image-link {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+}
+
+
+.featured-image img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition: transform 0.3s ease;
+}
+
+
+.featured-product-card:hover
+.featured-image img {
+  transform: scale(1.03);
+}
+
+
+.product-heart {
+  position: absolute;
+
+  top: 8px;
+  right: 8px;
+
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+
+  border-radius: 50%;
+
+  background-color: rgba(255, 255, 255, 0.9);
+
+  color: var(--color-text);
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.product-heart:hover {
+  background-color: var(--color-primary);
+
+  color: #ffffff;
+
+  transform: scale(1.08);
+}
+
+
+.product-name {
+  display: block;
+
+  margin-top: 8px;
+
+  color: var(--color-text);
+
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+
+.product-name:hover {
+  color: var(--color-primary-light);
+}
+
+
+.product-price {
+  margin-top: 3px;
+
+  color: var(--color-text);
+
+  font-size: 13px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   Promotional Banner
+========================= */
+
+.home-promo {
+  height: 230px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  margin-top: 45px;
+
+  border-radius: var(--radius-md);
+
+  background-image:
+    url("https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=1600&q=85");
+
+  background-size: cover;
+
+  background-position: center;
+}
+
+
+.promo-overlay {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  padding: 30px 45px;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(246, 244, 239, 0.96) 0%,
+      rgba(246, 244, 239, 0.82) 35%,
+      rgba(246, 244, 239, 0.1) 75%
+    );
+}
+
+
+.promo-content h2 {
+  margin-bottom: 8px;
+
+  font-family: Georgia, serif;
+
+  color: var(--color-text);
+
+  font-size: 29px;
+
+  line-height: 1.05;
+}
+
+
+.promo-content p {
+  margin-bottom: 15px;
+
+  color: var(--color-text-light);
+
+  font-size: 13px;
+}
+
+
+.promo-button {
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  height: 36px;
+
+  padding: 0 15px;
+
+  border-radius: var(--radius-sm);
+
+  background-color: #171717;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  text-decoration: none;
+
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease;
+}
+
+
+.promo-button:hover {
+  background-color: var(--color-primary);
+
+  transform: translateY(-1px);
+}
+
+
+/* =========================
+   Tablet
+========================= */
+
+@media (max-width: 900px) {
+
+  .home-hero {
+    height: 400px;
+  }
+
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+
+  .category-grid {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+
+  .featured-products {
+    grid-template-columns:
+      repeat(3, 1fr);
+  }
+
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 650px) {
+
+  .home-page {
+    padding: 18px 14px 45px;
+  }
+
+
+  .home-hero {
+    height: 430px;
+
+    background-position: center;
+  }
+
+
+  .hero-overlay {
+    padding: 30px 25px;
+
+    align-items: flex-end;
+
+    background:
+      linear-gradient(
+        0deg,
+        rgba(20, 25, 23, 0.75) 0%,
+        rgba(20, 25, 23, 0.25) 65%,
+        rgba(20, 25, 23, 0.05) 100%
+      );
+  }
+
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+
+  .hero-content p {
+    font-size: 14px;
+  }
+
+
+  .home-benefits {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 20px 10px;
+
+    padding-top: 20px;
+  }
+
+
+  .home-section {
+    margin-top: 30px;
+  }
+
+
+  .category-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 18px 12px;
+  }
+
+
+  .category-card:last-child {
+    display: none;
+  }
+
+
+  .featured-products {
+    grid-template-columns:
+      repeat(2, 1fr);
+
+    gap: 22px 14px;
+  }
+
+
+  .product-arrows button {
+    width: 30px;
+    height: 30px;
+  }
+
+
+  .home-promo {
+    height: 220px;
+
+    margin-top: 35px;
+  }
+
+
+  .promo-overlay {
+    padding: 25px;
+  }
+
+
+  .promo-content h2 {
+    font-size: 25px;
+  }
+
+}
+
+
+/* =========================
+   Small Mobile
+========================= */
+
+@media (max-width: 400px) {
+
+  .home-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+
+  .home-hero {
+    height: 400px;
+  }
+
+
+  .hero-overlay {
+    padding: 25px 20px;
+  }
+
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+
+  .hero-content p {
+    font-size: 13px;
+  }
+
+
+  .hero-button {
+    height: 38px;
+
+    font-size: 12px;
+  }
+
+
+  .benefit-item h3 {
+    font-size: 11px;
+  }
+
+
+  .section-heading h2 {
+    font-size: 17px;
+  }
+
+
+  .category-card h3 {
+    font-size: 11px;
+  }
+
+
+  .product-name {
+    font-size: 13px;
+  }
+
+
+  .product-price {
+    font-size: 12px;
+  }
+
+
+  .home-promo {
+    height: 205px;
+  }
+
+}
+.product-heart.is-wishlisted {
+  color: #c45a5a;
+}
+
+.home-empty {
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 30px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  text-align: center;
+}
+
+.home-empty h2 { color: var(--color-primary); font-size: 20px; }
+.home-empty p { color: var(--color-text-light); font-size: 13px; }

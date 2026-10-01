@@ -1,0 +1,315 @@
+.register-page {
+  width: 100%;
+  min-height: calc(100vh - 78px);
+
+  background-color: var(--color-background);
+}
+
+.register-container {
+  width: 100%;
+  min-height: calc(100vh - 78px);
+
+  padding: 50px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-card {
+  width: 100%;
+  max-width: 500px;
+
+  padding: 40px 48px;
+
+  background-color: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+
+  box-shadow:
+    0 8px 30px rgba(0, 0, 0, 0.04);
+}
+
+
+/* Header */
+
+.register-header {
+  margin-bottom: 30px;
+
+  text-align: center;
+}
+
+.register-header h1 {
+  margin-bottom: 6px;
+
+  color: var(--color-text);
+
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.register-header p {
+  color: var(--color-text-light);
+
+  font-size: 15px;
+}
+
+
+/* Fields */
+
+.register-field {
+  width: 100%;
+
+  margin-bottom: 19px;
+}
+
+.register-field label {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: var(--color-text);
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.register-field input {
+  width: 100%;
+  height: 46px;
+
+  padding: 0 14px;
+
+  background-color: var(--color-surface);
+
+  color: var(--color-text);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  outline: none;
+
+  font-size: 14px;
+}
+
+.register-field input:focus {
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 0 0 3px rgba(38, 61, 58, 0.08);
+}
+
+
+/* Password */
+
+.register-password {
+  position: relative;
+}
+
+.register-password input {
+  padding-right: 45px;
+}
+
+.password-toggle {
+  position: absolute;
+
+  top: 50%;
+  right: 10px;
+
+  width: 30px;
+  height: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: translateY(-50%);
+
+  background: transparent;
+
+  color: var(--color-text-light);
+
+  border: none;
+}
+
+.password-toggle:hover {
+  color: var(--color-primary);
+}
+
+
+/* Register Button */
+
+.register-button {
+  width: 100%;
+  height: 46px;
+
+  background-color: var(--color-primary);
+  color: #ffffff;
+
+  border: none;
+  border-radius: var(--radius-sm);
+
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.register-button:hover {
+  background-color: var(--color-primary-light);
+}
+
+
+/* Social */
+
+.social-login {
+  margin-top: 18px;
+}
+
+.social-login > p {
+  margin-bottom: 15px;
+
+  color: var(--color-text-light);
+
+  text-align: center;
+
+  font-size: 13px;
+}
+
+.social-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 12px;
+}
+
+.social-button {
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 9px;
+
+  background-color: var(--color-surface);
+
+  color: var(--color-text);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  font-size: 14px;
+}
+
+.social-button:hover {
+  background-color: var(--color-background);
+
+  border-color: var(--color-primary);
+}
+
+.google-icon {
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.facebook-icon {
+  width: 20px;
+  height: 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #1877f2;
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  font-size: 14px;
+  font-weight: 700;
+}
+
+
+/* Login */
+
+.account-link {
+  margin-top: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 7px;
+
+  font-size: 14px;
+}
+
+.account-link span {
+  color: var(--color-text-light);
+}
+
+.account-link a {
+  color: var(--color-text);
+
+  font-weight: 600;
+
+  text-decoration: none;
+}
+
+.account-link a:hover {
+  color: var(--color-secondary);
+}
+
+
+/* Mobile */
+
+@media screen and (max-width: 600px) {
+
+  .register-container {
+    min-height: calc(100vh - 68px);
+
+    padding: 30px 14px;
+  }
+
+  .register-card {
+    padding: 30px 22px;
+  }
+
+  .register-header h1 {
+    font-size: 26px;
+  }
+
+  .social-buttons {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+
+  .register-container {
+    padding: 20px 10px;
+  }
+
+  .register-card {
+    padding: 26px 18px;
+  }
+}
+.register-error,
+.register-success {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.register-error {
+  color: #a33a3a;
+  background: #fff1f1;
+}
+
+.register-success {
+  color: #276749;
+  background: #edf9f1;
+}

@@ -1,0 +1,95 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  max-width: 100%;
+
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+
+  font-family: Arial, sans-serif;
+
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+#root {
+  width: 100%;
+  max-width: 100%;
+  min-height: 100vh;
+}
+
+
+/* =========================
+   COLORS
+========================= */
+
+:root {
+  --color-primary: #263d3a;
+  --color-primary-light: #344f4b;
+
+  --color-secondary: #a8895b;
+
+  --color-background: #f6f4ef;
+  --color-surface: #ffffff;
+
+  --color-text: #222222;
+  --color-text-light: #777777;
+
+  --color-border: #dedbd4;
+
+  --color-danger: #b64b4b;
+
+  --container-width: 1200px;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+}
+
+
+/* =========================
+   GLOBAL ELEMENTS
+========================= */
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+/* Shared form feedback */
+.form-error {
+  margin: 0 0 16px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #a33a3a;
+  background: #fff1f1;
+  font-size: 14px;
+  line-height: 1.4;
+}

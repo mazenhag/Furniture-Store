@@ -1,0 +1,7 @@
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { getCurrentUser, isAuthenticated, loginUser as apiLogin, logoutUser as apiLogout } from "../services/authService";
+import { clearAccountScopedData } from "../services/accountStorage";
+const AuthContext=createContext(null);
+export function AuthProvider({children}){const [user,setUser]=useState(null);const [authLoading,setAuthLoading]=useState(() => isAuthenticated());const [isLoggedIn,setIsLoggedIn]=useState(isAuthenticated());const refreshUser=useCallback(async()=>{if(!isAuthenticated()){setUser(null);setIsLoggedIn(false);setAuthLoading(false);return null;}try{const profile=await getCurrentUser();setUser(profile);setIsLoggedIn(true);return profile;}catch{setUser(null);setIsLoggedIn(true);return null;}finally{setAuthLoading(false);}},[]);useEffect(()=>{if(!isAuthenticated())return;getCurrentUser().then(profile=>{setUser(profile);setIsLoggedIn(true)}).catch(()=>setUser(null)).finally(()=>setAuthLoading(false));},[]);const login=async credentials=>{await apiLogin(credentials);return refreshUser()};const logout=()=>{clearAccountScopedData();apiLogout();setUser(null);setIsLoggedIn(false);window.dispatchEvent(new Event("authUpdated"));};return <AuthContext.Provider value={{user,isLoggedIn,authLoading,login,logout,refreshUser}}>{children}</AuthContext.Provider>}
+// eslint-disable-next-line react-refresh/only-export-components
+export const useAuth=()=>{const c=useContext(AuthContext);if(!c)throw new Error("useAuth must be used inside AuthProvider");return c;};

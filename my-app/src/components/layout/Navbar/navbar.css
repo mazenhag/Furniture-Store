@@ -1,0 +1,466 @@
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+  width: 100%;
+  max-width: 100%;
+
+  min-height: 78px;
+
+  background-color: var(--color-surface);
+
+  border-bottom: 1px solid var(--color-border);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+}
+
+.navbar-container {
+  width: min(
+    calc(100% - 40px),
+    var(--container-width)
+  );
+
+  max-width: 100%;
+
+  min-height: 78px;
+
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 20px;
+}
+
+
+/* =========================
+   LOGO
+========================= */
+
+.navbar-logo {
+  flex-shrink: 0;
+
+  color: var(--color-primary);
+
+  font-size: 27px;
+  font-weight: 700;
+
+  letter-spacing: -0.8px;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: color 0.25s ease;
+}
+
+.navbar-logo:hover {
+  color: var(--color-secondary);
+}
+
+
+/* =========================
+   DESKTOP LINKS
+========================= */
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+
+  gap: 38px;
+}
+
+.navbar-links a {
+  position: relative;
+
+  padding: 8px 0;
+
+  color: var(--color-text);
+
+  font-size: 15px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  white-space: nowrap;
+
+  transition: color 0.25s ease;
+}
+
+.navbar-links a:hover {
+  color: var(--color-secondary);
+}
+
+.navbar-links a::after {
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  bottom: -6px;
+
+  width: 0;
+  height: 2px;
+
+  background-color: var(--color-secondary);
+
+  transform: translateX(-50%);
+
+  transition: width 0.25s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   SEARCH
+========================= */
+
+.navbar-search {
+  width: 180px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 12px;
+
+  background-color: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+
+  color: var(--color-text-light);
+
+  flex-shrink: 0;
+
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.navbar-search:focus-within {
+  border-color: var(--color-primary);
+
+  box-shadow:
+    0 0 0 2px rgba(38, 61, 58, 0.08);
+}
+
+.navbar-search input {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+
+  padding: 0;
+
+  border: none;
+  outline: none;
+
+  background: transparent;
+
+  color: var(--color-text);
+
+  font-size: 14px;
+}
+
+.navbar-search input::placeholder {
+  color: var(--color-text-light);
+}
+
+.navbar-search svg {
+  flex-shrink: 0;
+}
+
+
+/* =========================
+   ICONS
+========================= */
+
+.navbar-icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+
+  flex-shrink: 0;
+
+  color: var(--color-text);
+
+  background-color: transparent;
+
+  border: none;
+  border-radius: 50%;
+
+  text-decoration: none;
+
+  transition:
+    color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.navbar-icon:hover {
+  color: var(--color-primary);
+
+  background-color: var(--color-background);
+}
+
+
+/* =========================
+   CART
+========================= */
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+
+  top: 1px;
+  right: 0;
+
+  min-width: 16px;
+  height: 16px;
+
+  padding: 0 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-secondary);
+  color: #ffffff;
+
+  border-radius: 50%;
+
+  font-size: 9px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   MOBILE BUTTON
+========================= */
+
+.menu-button {
+  display: none;
+
+  width: 40px;
+  height: 40px;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+
+  padding: 0;
+
+  background-color: transparent;
+
+  color: var(--color-text);
+
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+}
+
+.menu-button:hover {
+  background-color: var(--color-background);
+}
+
+
+/* =========================
+   MOBILE MENU
+========================= */
+
+.mobile-menu {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--color-surface);
+
+  border-top: 1px solid var(--color-border);
+}
+
+.mobile-menu a {
+  width: 100%;
+
+  padding: 15px 20px;
+
+  color: var(--color-text);
+
+  font-size: 15px;
+  font-weight: 500;
+
+  text-decoration: none;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-menu a:hover {
+  color: var(--color-secondary);
+
+  background-color: var(--color-background);
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media screen and (max-width: 1000px) {
+
+  .navbar-links {
+    gap: 24px;
+  }
+
+  .navbar-search {
+    width: 150px;
+  }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media screen and (max-width: 700px) {
+
+  .navbar {
+    min-height: 68px;
+  }
+
+  .navbar-container {
+    width: 100%;
+    min-height: 68px;
+
+    padding: 0 8px;
+
+    gap: 8px;
+  }
+
+
+  .navbar-logo {
+    font-size: 21px;
+
+    flex: 1 1 auto;
+
+    min-width: 0;
+  }
+
+
+  .navbar-links {
+    display: none;
+  }
+
+
+  .navbar-actions {
+    gap: 2px;
+  }
+
+
+  /* Search becomes icon */
+
+  .navbar-search {
+    width: 34px !important;
+    min-width: 34px !important;
+    max-width: 34px !important;
+
+    height: 34px;
+
+    padding: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    background-color: transparent;
+
+    border: none;
+
+    box-shadow: none;
+  }
+
+  .navbar-search input {
+    display: none;
+  }
+
+  .navbar-search svg {
+    width: 21px;
+    height: 21px;
+  }
+
+
+  /* Icons */
+
+  .navbar-icon {
+    width: 34px;
+    height: 34px;
+  }
+
+
+  /* Menu */
+
+  .menu-button {
+    display: flex;
+
+    width: 34px;
+    height: 34px;
+  }
+}
+
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media screen and (max-width: 400px) {
+
+  .navbar-container {
+    padding: 0 5px;
+  }
+
+  .navbar-logo {
+    font-size: 20px;
+  }
+
+  .navbar-actions {
+    gap: 0;
+  }
+
+  .navbar-search,
+  .navbar-icon,
+  .menu-button {
+    width: 32px !important;
+    min-width: 32px !important;
+
+    height: 32px;
+  }
+}

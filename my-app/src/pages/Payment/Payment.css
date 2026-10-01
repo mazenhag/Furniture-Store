@@ -1,0 +1,493 @@
+.payment-page {
+  min-height: calc(100vh - 80px);
+  padding: 35px 20px 70px;
+
+  background-color: var(--color-background);
+}
+
+.payment-container {
+  width: min(100%, 760px);
+  margin: 0 auto;
+
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.payment-header {
+  padding: 22px 30px;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.payment-logo {
+  color: var(--color-primary);
+
+  font-size: 22px;
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+
+/* =========================
+   Steps
+========================= */
+
+.payment-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 25px 30px;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.payment-step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: #aaa;
+
+  font-size: 13px;
+}
+
+.payment-step span {
+  width: 26px;
+  height: 26px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background-color: #e5e5e5;
+  color: #888;
+
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.payment-step.active {
+  color: var(--color-primary);
+}
+
+.payment-step.active span {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.payment-step.completed {
+  color: var(--color-primary);
+}
+
+.payment-step.completed span {
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.payment-step-line {
+  width: 65px;
+  height: 1px;
+
+  margin: 0 12px;
+
+  background-color: var(--color-border);
+}
+
+.payment-step-line.completed-line {
+  background-color: var(--color-primary);
+}
+
+
+/* =========================
+   Content
+========================= */
+
+.payment-content {
+  padding: 30px;
+}
+
+.payment-content h1 {
+  margin-bottom: 22px;
+
+  color: var(--color-primary);
+
+  font-size: 21px;
+  font-weight: 600;
+}
+
+
+/* =========================
+   Form
+========================= */
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+
+  border: 1px solid var(--color-border);
+}
+
+
+/* =========================
+   Payment Option
+========================= */
+
+.payment-option {
+  padding: 13px 14px;
+
+  border-bottom: 1px solid var(--color-border);
+
+  background-color: #ffffff;
+}
+
+.payment-option:last-of-type {
+  border-bottom: none;
+}
+
+.payment-option.selected {
+  background-color: #fcfcfb;
+}
+
+.payment-option-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 20px;
+
+  cursor: pointer;
+}
+
+.payment-option input[type="radio"] {
+  position: absolute;
+
+  width: 14px;
+  height: 14px;
+
+  margin: 0;
+
+  opacity: 0;
+
+  cursor: pointer;
+}
+
+.custom-radio {
+  width: 14px;
+  height: 14px;
+
+  flex-shrink: 0;
+
+  border: 1px solid #777;
+  border-radius: 50%;
+
+  background-color: #ffffff;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.payment-option input[type="radio"]:checked
+  + .custom-radio {
+  border-color: var(--color-primary);
+
+  box-shadow:
+    inset 0 0 0 3px #ffffff,
+    inset 0 0 0 7px var(--color-primary);
+}
+
+.payment-option-title {
+  margin-left: 9px;
+
+  color: var(--color-text);
+
+  font-size: 12px;
+  font-weight: 500;
+}
+
+
+/* =========================
+   Card Brands
+========================= */
+
+.card-brands {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+
+  margin-left: auto;
+}
+
+.card-brands strong {
+  color: #173c91;
+
+  font-size: 11px;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.mastercard-mark {
+  position: relative;
+
+  display: flex;
+
+  width: 28px;
+  height: 16px;
+}
+
+.mastercard-mark i {
+  position: absolute;
+
+  width: 15px;
+  height: 15px;
+
+  border-radius: 50%;
+}
+
+.mastercard-mark i:first-child {
+  left: 2px;
+
+  background-color: #eb001b;
+}
+
+.mastercard-mark i:last-child {
+  right: 2px;
+
+  background-color: #f79e1b;
+
+  opacity: 0.9;
+}
+
+
+/* =========================
+   Card Fields
+========================= */
+
+.card-fields {
+  margin-top: 13px;
+  padding-left: 23px;
+}
+
+.payment-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.payment-field label {
+  color: var(--color-text-light);
+
+  font-size: 10px;
+}
+
+.card-input-wrapper {
+  position: relative;
+}
+
+.card-input-wrapper svg {
+  position: absolute;
+  top: 50%;
+  left: 9px;
+
+  transform: translateY(-50%);
+
+  color: #aaa;
+}
+
+.payment-field input {
+  width: 100%;
+  height: 34px;
+
+  padding: 0 10px;
+
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+
+  outline: none;
+
+  background-color: #ffffff;
+  color: var(--color-text);
+
+  font-size: 10px;
+}
+
+.card-input-wrapper input {
+  padding-left: 30px;
+}
+
+.payment-field input::placeholder {
+  color: #aaa;
+}
+
+.payment-field input:focus {
+  border-color: var(--color-primary);
+}
+
+.card-small-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 14px;
+
+  margin-top: 10px;
+}
+
+
+/* =========================
+   Simple Options
+========================= */
+
+.simple-option {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  min-height: 43px;
+
+  cursor: pointer;
+}
+
+.simple-option .payment-option-title {
+  margin-left: 9px;
+}
+
+
+/* =========================
+   PayPal
+========================= */
+
+.paypal-logo {
+  margin-left: auto;
+
+  color: #003087;
+
+  font-size: 12px;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+/* =========================
+   Billing Address
+========================= */
+
+.billing-address {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+
+  padding: 13px 14px;
+
+  color: var(--color-text-light);
+
+  font-size: 10px;
+
+  cursor: pointer;
+}
+
+.billing-address input {
+  width: 13px;
+  height: 13px;
+
+  margin: 0;
+
+  accent-color: var(--color-primary);
+
+  cursor: pointer;
+}
+
+
+/* =========================
+   Continue Button
+========================= */
+
+.payment-continue-button {
+  width: calc(100% - 28px);
+  height: 40px;
+
+  margin: 0 14px 14px;
+
+  border: none;
+  border-radius: 3px;
+
+  background-color: var(--color-primary);
+  color: #ffffff;
+
+  font-size: 12px;
+  font-weight: 500;
+
+  transition: background-color 0.2s ease;
+}
+
+.payment-continue-button:hover {
+  background-color: var(--color-primary-light);
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 600px) {
+  .payment-page {
+    padding: 20px 12px 45px;
+  }
+
+  .payment-header {
+    padding: 18px 20px;
+  }
+
+  .payment-steps {
+    padding: 20px 15px;
+  }
+
+  .payment-step {
+    gap: 5px;
+
+    font-size: 11px;
+  }
+
+  .payment-step span {
+    width: 24px;
+    height: 24px;
+  }
+
+  .payment-step-line {
+    width: 30px;
+
+    margin: 0 7px;
+  }
+
+  .payment-content {
+    padding: 25px 20px 30px;
+  }
+
+  .payment-content h1 {
+    font-size: 19px;
+  }
+
+  .card-fields {
+    padding-left: 23px;
+  }
+
+  .card-small-fields {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+}
+.payment-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
